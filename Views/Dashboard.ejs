@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script defer src="../Javascript/sidebar.js"></script>
+    <!-- <script defer src="../Public/Javascript/Client.js"></script> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../Scss/Common.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <img
+        class="logo"
+        width="200.25px"
+        height="36px"
+        src="https://kovenantz.com/assets/img/site-logo.png"
+        alt=""
+      />
+    </header>
+    <div class="sidenav">
+      <a href="dashboard">Dashboard</a>
+      <a href="attendance">Attendance</a>
+      <button class="dropdown-btn">
+        Profile
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container">
+        <!-- <a href="#">View Attendance</a> -->
+        <a href="report">Report</a>
+        <a href="logout" onclick=" removeValues()">Sign Out</a>
+      </div>
+    </div>
+
+    <div class="main">
+      <center><h1>Welcome <%= empName %></h1></center>
+      <fieldset>
+        <legend>Employee Details</legend>
+        <style>
+          table,
+          th,
+          td {
+            border: 1px solid rgb(255, 255, 255);
+          }
+        </style>
+        <table style="width: 100%">
+          <tr>
+            <th>EmpId</th>
+            <td><%= empId %></td>
+          </tr>
+          <tr>
+            <th>Name</th>
+            <td><%= name %></td>
+          </tr>
+          <tr>
+            <th>Email Id</th>
+            <td><%= email %></td>
+          </tr>
+          <tr>
+            <th>DOB</th>
+            <td><%= dob %></td>
+          </tr>
+          <tr>
+            <th>Gender</th>
+            <td><%= gender %></td>
+          </tr>
+          <tr>
+            <th>Position</th>
+            <td><%= position %></td>
+          </tr>
+        </table>
+      </fieldset>
+    </div>
+  </body>
+</html>

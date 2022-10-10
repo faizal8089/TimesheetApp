@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+label,p{
+    color: white;
+}
+
+label{
+    width: 240px;
+    display: inline-block;
+}
+
+body{
+    .header{
+        background-color: #252B4C;
+        .logo{
+            margin: 20px 30px;
+        }
+    }
+}
+
+
+
+#loginErr {
+    z-index: 1;
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0px 30px;}
+
+
+
+form{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    border: none;
+    border-radius: 1em;
+    margin: 50px 50px;
+    padding: 25px 50px;
+    background-color: #252B4C;
+    align-items: stretch;
+    height: fit-content;
+}

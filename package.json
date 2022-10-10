@@ -1,0 +1,30 @@
+{
+  "name": "kovenantz-timesheet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "grunt": "^1.5.3",
+    "grunt-contrib-uglify": "^5.2.2",
+    "moment": "^2.29.4",
+    "msnodesqlv8": "^2.6.0",
+    "mssql": "^9.0.0",
+    "nodemailer": "^6.7.8",
+    "uuid": "^8.3.2",
+    "webpack": "^5.74.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}

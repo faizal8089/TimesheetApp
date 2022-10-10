@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script defer src="../Javascript/sidebar.js"></script>
+
+    <script defer src="../Public/Javascript/Client.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../Scss/Common.css" />
+    <link rel="stylesheet" href="../Scss/Attendance.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <img
+        class="logo"
+        width="200.25px"
+        height="36px"
+        src="https://kovenantz.com/assets/img/site-logo.png"
+        alt=""
+      />
+    </header>
+    <div class="sidenav">
+      <a href="dashboard">Dashboard</a>
+      <a href="attendance">Attendance</a>
+      <button class="dropdown-btn">
+        Profile
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container">
+        <!-- <a href="#">View Attendance</a> -->
+        <a href="report">Report</a>
+        <a href="logout" onclick=" removeValues()">Sign Out</a>
+      </div>
+    </div>
+
+    <div class="main">
+      <fieldset>
+        <legend>Mark Attendance for today !</legend>
+        <form id="attendanceForm" action="/attendance" method="post">
+          <button
+            formaction="checkIn"
+            class="btn btn-info btn-md"
+            name="time"
+            id="checkIn"
+            onclick="disableCheckIn()"
+          >
+            checkIn
+          </button>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          &nbsp; &nbsp;
+          <button
+            formaction="checkOut"
+            class="btn btn-info btn-md"
+            name="time"
+            id="checkOut"
+            onclick="disableCheckOut()"
+          >
+            checkOut
+          </button>
+        </form>
+      </fieldset>
+      <br /><br />
+      <fieldset>
+        <legend>Attendance Today</legend>
+        <style>
+          table,
+          th,
+          td {
+            text-align: center;
+            padding: 5px 20px;
+            border: 1px solid rgb(255, 255, 255);
+          }
+        </style>
+        <table style="width: 100%">
+          <tr>
+            <th>Sl No</th>
+            <th>checkIn</th>
+            <th>checkOut</th>
+            <th>Duration</th>
+          </tr>
+          <% if(data.length != 0) {%> <% for(let i = 0; i < data.length ; i++)
+          {%>
+          <tr>
+            <td><%= i+1 %></td>
+            <td><%= data[i].checkIn.toLocaleTimeString(); %></td>
+            <td>
+              <%= data[i].checkIn.toLocaleTimeString() ===
+              data[i].checkOut.toLocaleTimeString() ? '-checkOut-' :
+              data[i].checkOut.toLocaleTimeString() %>
+            </td>
+            <% function msToTime(duration) { (seconds = Math.floor((duration /
+            1000) % 60)), (minutes = Math.floor((duration / (1000 * 60)) % 60)),
+            (hours = Math.floor((duration / (1000 * 60 * 60)) % 24)); hours =
+            hours < 10 ? "0" + hours : hours; minutes = minutes < 10 ? "0" +
+            minutes : minutes; seconds = seconds < 10 ? "0" + seconds : seconds;
+            return hours + ":" + minutes + ":" + seconds; } let d1 = new
+            Date(`${data[i].checkIn.toISOString()}`), d2 = new
+            Date(`${data[i].checkOut.toISOString()}`); %>
+            <td><%= msToTime(d2 -d1) %></td>
+          </tr>
+          <% } %> <% } %>
+        </table>
+      </fieldset>
+    </div>
+  </body>
+</html>

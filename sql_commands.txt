@@ -1,0 +1,108 @@
+--ALTER TABLE Authentication
+--ADD email varchar(50);
+
+--ALTER TABLE Attendance
+--ADD email varchar(50);
+
+--use kovenantz
+
+--update Authentication set email = 'johndoe@kovenantz.com' where empId = 'KZ00010'
+--update EmpDetails set emailAddress = 'johndoe@kovenantz.com' where empId = 'KZ00010'
+
+--delete from Authentication where empId = 'KZ00037'
+--delete from EmpDetails where empId = 'KZ00037'
+
+--ALTER TABLE EmpDetails
+--DROP CONSTRAINT PK_EmpDetails;
+
+--ALTER TABLE EmpDetails ALTER COLUMN emailAddress varchar(50) NOT NULL
+
+--ALTER TABLE EmpDetails
+--ADD PRIMARY KEY (emailAddress);
+
+--ALTER TABLE Authentication ALTER COLUMN email varchar(50) NOT NULL
+
+--ALTER TABLE Authentication
+--ADD PRIMARY KEY (email);
+
+
+
+--insert into Attendance values ('KZ00035', '2022-08-30', '12:30:01', '12:30:02', 'faizalsulthan288@gmail.com');
+
+--delete from Attendance where empId = 'KZ00033'
+
+--Create table Attendance
+--(
+--	empId varchar(500) not null,
+--	workingDay datetime NOT NULL,
+--	checkIn datetime not null,
+--	checkOut datetime not null,
+--	email varchar(50) not null,
+--	checked bit null
+--	--Constraint PK_Attendance Primary Key (email, workingDay)
+--)
+
+--drop table Attendance
+
+
+--ALTER TABLE Attendance
+--DROP CONSTRAINT PK_Attendance
+
+--drop table Duration
+
+
+--delete from Duration where empId = 'KZ00033'
+--delete from Attendance where empId = 'KZ00037'
+--delete from Attendance where empId = 'KZ00035'
+
+--delete from Attendance
+
+use kovenantz
+select * from Authentication;
+--select * from Attendance;
+--select * from EmpDetails;
+--select * from AuthCode;
+select * from lockProfile;
+
+--delete from lockProfile
+update Authentication set profileLock = '0' where email = 'faizalsulthan288@gmail.com'
+
+--insert into lockProfile values ('faizalsulthan288@gmail.com', 2)
+--update lockProfile set lockCount = 3 where email = 'faizalsulthan288@gmail.com'
+--delete from lockProfile where email = 'faizalsulthan288@gmail.com'
+--select lockCount from lockProfile where email = 'faizalsulthan288@gmail.com'
+
+
+
+
+--create table lockProfile (email varchar(50) primary key, lockCount int);
+
+--drop table AuthCode
+--delete from AuthCode
+--create table AuthCode (email varchar(50) primary key, authCode varchar(7))
+
+--select distinct workingDay, sum(DATEDIFF(MILLISECOND, checkIn, checkOut)) as duration from Attendance where email = 'faizalsulthan288@gmail.com' group by workingDay order by workingDay ASC
+
+--select sum(duration) as tot from Duration where email = 'faizalsulthan288@gmail.com' AND workingDay = '2022-09-08 00:00:00.000'
+
+
+--select distinct workingDay from Duration where email = 'faizalsulthan288@gmail.com'
+
+--delete from Duration where empId = 'KZ00033'
+
+--create table Duration (duration int)
+
+--SELECT DATEDIFF(millisecond, '2022-09-07 09:00:49.937', '2022-09-07 09:00:55.547') AS Duration;
+
+--insert into Duration values (DATEDIFF(millisecond, '2022-09-07 09:00:49.937', '2022-09-07 09:00:55.547'))
+
+
+
+--delete from Attendance where empId = 'KZ00032'
+
+’ OR 1 = 1 --
+
+
+--select * from EmpDetails
+
+--select * from Attendance

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/Scss/Login.css" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script defer src="/Javascript/loginClient.js"></script>
+    <meta charset="UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+  </head>
+
+  <body  style="background-color: #1f2542">
+    <!-- Header -->
+    <header class="header">
+      <img
+        class="logo"
+        width="200.25px"
+        height="36px"
+        src="https://kovenantz.com/assets/img/site-logo.png"
+        alt=""
+      />
+    </header>
+    <!-- Login Form   -->
+    <div id="login">
+
+      <div class="container">
+        
+        <div
+          id="login-row"
+          class="row justify-content-center align-items-center"
+        >
+        
+          <div id="login-column" class="col-md-6">
+            <div id="login-box" class="col-md-12">
+              <p class="text-danger" id="loginErr"><%= loginErr %></p>
+              <form  method="POST" action="/login" id="loginForm" class="form">
+                <h3 class="text-center text-info">Login</h3>
+                <div class="form-group">
+                  
+
+                  <!-- <label for="username" class="text-info">Username:</label > -->
+                  <label  class="text-info" for="email">Email*</label>
+                  <br />
+                  <input 
+                   class="form-control" 
+                   required name="email" 
+                   required type="email" 
+                   id="email"
+                   value='<%= emailValue %>'  />
+                   <br />
+                </div>
+                <div class="form-group">
+                  <label for="password" class="text-info">Password:</label
+                  ><br />
+                  <input
+                    required
+                    type="password"
+                    name="password"
+                    id="password"
+                    class="form-control"
+                    value='<%= passValue %>'
+                  />
+                </div>
+                <div class="form-group">
+                  <!-- <label for="remember-me" class="text-info"> -->
+                    <span>
+                      <!-- Remember me --> </span
+                    > 
+                    <span
+                      >
+                      <!-- <input
+                        id="remember-me"
+                        name="remember-me"
+                        type="checkbox" /></span></label> -->
+                        <br />
+                  <input
+                  id="submit"
+                    type="submit"
+                    name="submit"
+                    class="btn btn-info btn-md"
+                    value="submit"
+                    
+                  />
+
+                </div>
+                <div id="register-link" class="text-right">
+                  <a href="Registration
+                  " class="text-info">Register here</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>

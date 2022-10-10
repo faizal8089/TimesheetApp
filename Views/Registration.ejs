@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <link rel="stylesheet" href="../Scss/Dashboard.css" /> -->
+    <link rel="stylesheet" href="/Scss/Registration.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- links -->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>Register</title>
+  </head>
+
+  <body style="background-color: #1f2542">
+    <!-- Header -->
+    <header class="header">
+      <a href="/login">
+        <img
+          class="logo"
+          width="200.25px"
+          height="36px"
+          src="https://kovenantz.com/assets/img/site-logo.png"
+          alt=""
+        />
+      </a>
+    </header>
+    <!-- Sign Up Form  -->
+
+    <p class="text-danger" id="loginErr"><%= loginErr %></p>
+    <form method="post" action="/registration" id="myForm">
+      <!-- Name Section -->
+      <div class="nameSection">
+        <label for="fName">First Name*</label>
+        <input
+          name="fName"
+          required
+          type="text"
+          id="fName"
+          value="<%= f_Name %>"
+        />
+        <br /><br />
+        <label for="lName">Last Name*</label>
+        <input
+          name="lName"
+          required
+          type="text"
+          id="lName"
+          value="<%= l_Name %>"
+        />
+      </div>
+      <br />
+      <!-- Other Details Section -->
+      <div class="otherDetails">
+        <label for="emailId">Email Id*</label>
+        <input
+          name="emailId"
+          required
+          type="email"
+          id="emailId"
+          value="<%= emailId %>"
+        /><br />
+        <br />
+        <label for="dob">DOB*</label>
+        <input name="dob" required type="date" id="dob" value="<%= dob %>" />
+      </div>
+      <br />
+      <!-- Gender and Position -->
+      <div class="genderandposition">
+        <!-- gender drop down -->
+        <label for="gender">Choose Gender:</label>
+        <select name="gender" id="gender">
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+          <option value="O">Other</option>
+        </select>
+        <br /><br />
+        <label for="position">Position</label>
+        <input
+          name="position"
+          required
+          type="text"
+          id="position"
+          value="<%= position %>"
+        />
+      </div>
+      <br />
+      <!-- Authentication -->
+      <div class="authentication">
+        <label for="empId">Employee Id*</label>
+        <input
+          name="empId"
+          required
+          type="text"
+          id="empId"
+          value="<%= empId %>"
+        /><br /><br />
+        <label for="password">Password</label>
+        <input
+          name="password"
+          required
+          type="password"
+          id="password"
+          value="<%= password %>"
+        /><br /><br />
+        <label for="cnfpassword">Confirm Password</label>
+        <input name="cnfpassword" required type="password" id="cnfpassword" />
+      </div>
+      <br />
+      <label for="emailCode">Code</label>
+      <input type="text" name="emailCode" id="emailCode" />
+      <button id="code" class="btn btn-info btn-md" formaction="sendCode">
+        get code
+      </button>
+      <br />
+      <br />
+      <!-- Submit Button -->
+      <center>
+        <button
+          class="btn btn-info btn-md"
+          value="submit"
+          id="submit"
+          type="submit"
+          name="submit"
+        >
+          Register
+        </button>
+      </center>
+    </form>
+  </body>
+</html>
